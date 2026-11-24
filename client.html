@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat App</title>
+
+    <!-- Socket.IO -->
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+    <div id="login">
+        <form id="loginForm">
+            <h1>Chat me aao</h1>
+            <input id="nameInput" placeholder="Apna naam likho" maxlength="20" autocomplete="off" required>
+            <button class="go" type="submit">
+                Chat shuru karo
+            </button>
+        </form>
+    </div>
+
+    <div class="app">
+
+        <aside>
+            <h1>Chat App</h1>
+
+            <div class="me">
+                Aap: <b id="meName">-</b><br>
+                <span id="status">connecting...</span>
+            </div>
+
+            <button class="item active" id="publicBtn">
+                Public chat
+            </button>
+
+            <div class="group-title">Aapke rooms</div>
+            <div id="myRooms"></div>
+
+            <div class="group-title">
+                Room banao ya join karo
+            </div>
+
+            <form class="roomform" id="roomForm">
+                <input id="roomInput" placeholder="room ka naam" maxlength="30" autocomplete="off">
+
+                <button class="go" type="submit">
+                    Join
+                </button>
+            </form>
+
+            <div class="group-title">Saare rooms</div>
+            <div id="allRooms"></div>
+
+        </aside>
+
+        <main>
+
+            <header>
+                <div>
+                    <h2 id="title">Public chat</h2>
+                    <small id="sub">
+                        Yahan sab log dekhte hain
+                    </small>
+                </div>
+
+                <button id="leave" hidden>
+                    Room chhodo
+                </button>
+            </header>
+
+            <div id="msgs"></div>
+
+            <form class="send" id="sendForm">
+                <input id="msgInput" placeholder="Message likho..." autocomplete="off" maxlength="500">
+
+                <button class="go" type="submit">
+                    Bhejo
+                </button>
+            </form>
+
+        </main>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="client.js"></script>
+
+</body>
+
+</html>
